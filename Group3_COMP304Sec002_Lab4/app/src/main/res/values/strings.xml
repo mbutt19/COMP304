@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Group3_COMP304Sec002_Lab4</string>
+    <string name="tagline">Classroom Manager</string>
+    <string name="login">Login</string>
+    <string name="reg">Register</string>
+    <string name="user">User ID</string>
+    <string name="pass">Password</string>
+</resources>
