@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-@Entity
+@Entity(tableName = "Classrooms")
 public class Classroom {
 
     @PrimaryKey(autoGenerate = true)
