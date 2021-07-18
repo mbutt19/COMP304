@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="buttons">
+        <item name="android:textColor">@color/fancy_blue</item>
+        <item name="android:backgroundTint">@color/boring_grey</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="labels">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/fancy_blue</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="input">
+        <item name="editTextColor">@color/fancy_blue</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+</resources>

@@ -14,12 +14,11 @@ public class Classroom {
     private int classroomId;
     private int professorId;
     private List<Integer> studentIds;
-    private String floor;
+    private int floor;
     private boolean ac;
 
     // Constructor with all attributes
-    public Classroom(int classroomId, int professorId, String floor,
-                     boolean ac) {
+    public Classroom(int classroomId, int professorId, int floor, boolean ac) {
         this.classroomId = classroomId;
         this.professorId = professorId;
         this.floor = floor;
@@ -30,14 +29,14 @@ public class Classroom {
     public int getClassroomId() { return classroomId; }
     public int getProfessorId() { return professorId; }
     public List<Integer> getStudentIds() { return studentIds;}
-    public String getFloor() { return floor; }
+    public int getFloor() { return floor; }
     public boolean isAc() { return ac; }
 
     // SETTERS
     public void setClassroomId(int classroomId) { this.classroomId = classroomId; }
     public void setStudentIds(List<Integer> studentIds) { this.studentIds = studentIds.subList(0, -1); }
     public void setProfessorId(int professorId) { this.professorId = professorId; }
-    public void setFloor(String floor) { this.floor = floor; }
+    public void setFloor(int floor) { this.floor = floor; }
     public void setAc(boolean ac) { this.ac = ac; }
 
     // Setter for students list
