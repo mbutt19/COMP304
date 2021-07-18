@@ -3,10 +3,6 @@ package com.example.group3_comp304sec002_lab4;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
 @Entity
 public class Student {
 
@@ -15,35 +11,31 @@ public class Student {
     private String firstName;
     private String lastName;
     private String department;
-    private List<Integer> professorIds;
-    private String homeRoom;
+    private int professorId;
+    private int classroom;
 
     // Constructor with all attributes
-    public Student(int studentId, String firstName, String lastName, String department, String homeRoom) {
+    public Student(int studentId, String firstName, String lastName, String department, int classroom, int professorId) {
         this.studentId = studentId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.department = department;
-        this.homeRoom = homeRoom;
-        this.professorIds = new ArrayList<>(); {
-        }
+        this.classroom = classroom;
+        this.professorId = professorId;
     }
     // GETTERS
     public int getStudentId() { return studentId; }
     public String getFirstName() { return firstName; }
     public String getLastName() { return lastName; }
     public String getDepartment() { return department; }
-    public String getHomeRoom() { return homeRoom; }
+    public int getClassroom() { return classroom; }
+    public int getProfessorId() { return professorId; }
 
     // SETTERS
     public void setStudentId(int studentId) { this.studentId = studentId; }
     public void setFirstName(String firstName) { this.firstName = firstName; }
     public void setLastName(String lastName) { this.lastName = lastName; }
     public void setDepartment(String department) { this.department = department; }
-    public void setHomeRoom(String homeRoom) { this.homeRoom = homeRoom; }
-
-    // Setter for professors list
-    public void addProfessorIds(int professorId) { this.professorIds.add(professorId); }
-    public void addProfessorIds(Collection<? extends Integer> professorIds) {
-        this.professorIds.addAll(professorIds); }
+    public void setClassroom(int classroom) { this.classroom = classroom; }
+    public void setProfessorId(int professorId) { this.studentId = professorId; }
 }

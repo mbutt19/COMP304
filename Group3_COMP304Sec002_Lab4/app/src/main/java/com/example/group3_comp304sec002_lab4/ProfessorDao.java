@@ -1,4 +1,24 @@
 package com.example.group3_comp304sec002_lab4;
 
-public class ProfessorDao {
+import androidx.lifecycle.LiveData;
+import androidx.room.Dao;
+import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
+import androidx.room.Query;
+import androidx.room.Update;
+
+import java.util.List;
+
+@Dao
+public interface ProfessorDao {
+
+    //Monitoring Query Result Changes with Live Data
+    @Query("select * from Professor where professorId = :professorId")
+    LiveData<List<Professor>> getSelectProfessor(int professorId);
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    void insertProfessor(Student... students);
+
+    @Update(onConflict = OnConflictStrategy.REPLACE)
+    void updateProfessor(Student... students);
 }

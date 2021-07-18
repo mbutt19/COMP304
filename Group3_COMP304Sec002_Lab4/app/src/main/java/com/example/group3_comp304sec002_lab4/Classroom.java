@@ -18,12 +18,12 @@ public class Classroom {
     private boolean ac;
 
     // Constructor with all attributes
-    public Classroom(int classroomId, int professorId, int floor, boolean ac) {
+    public Classroom(int classroomId, int professorId, int floor, boolean ac, List<Integer> studentIds) {
         this.classroomId = classroomId;
         this.professorId = professorId;
         this.floor = floor;
         this.ac = ac;
-        this.studentIds = new ArrayList<>();
+        this.studentIds = studentIds.subList(0, -1);
     }
     // GETTERS
     public int getClassroomId() { return classroomId; }
