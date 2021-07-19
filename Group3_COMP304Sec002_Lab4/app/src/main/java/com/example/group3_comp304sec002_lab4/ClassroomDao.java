@@ -14,9 +14,9 @@ public interface ClassroomDao{
     //Monitoring Query Result Changes with Live Data
     @Query("select * from Classrooms where classroomId = :classroomId")
     LiveData<List<Classroom>> getSelectClassroom(int classroomId);
-    @Query("select studentIds from Classrooms where studentIds = :studentId")
-    LiveData<List<Classroom>> getClassStudentsFromStudent(int studentId);
-    @Query("select * from Classrooms where studentIds = :studentId")
+    @Query("select studentId from Classrooms where studentId = :studentId")
+    LiveData<List<Integer>> getClassStudentsFromStudent(int studentId);
+    @Query("select * from Classrooms where studentId = :studentId")
     LiveData<List<Classroom>> getClassFromStudent(int studentId);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

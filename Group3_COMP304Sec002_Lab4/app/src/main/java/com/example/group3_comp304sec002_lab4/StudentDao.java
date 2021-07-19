@@ -16,7 +16,7 @@ public interface StudentDao {
     @Query("select * from Student where studentId = :studentId")
     LiveData<List<Student>> getSelectStudent(int studentId);
     @Query("select * from Student where classroom = :classroomId")
-    LiveData<List<Classroom>> getAllStudentsInClass(int classroomId);
+    LiveData<List<Student>> getAllStudentsInClass(int classroomId);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertStudent(Student... students);
