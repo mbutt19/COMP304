@@ -7,7 +7,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 
-@Database(entities = {Professor.class, Student.class, Classroom.class}, version = 1)
+@Database(entities = {Professor.class, Student.class, Classroom.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     private static volatile AppDatabase INSTANCE;
     private static final String DATABASE_NAME = "AppDB";

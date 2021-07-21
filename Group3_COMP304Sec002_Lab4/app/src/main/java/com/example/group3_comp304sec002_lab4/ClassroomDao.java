@@ -18,6 +18,8 @@ public interface ClassroomDao{
     LiveData<List<Integer>> getClassStudentsFromStudent(int studentId);
     @Query("select * from Classrooms where studentId = :studentId")
     LiveData<List<Classroom>> getClassFromStudent(int studentId);
+    @Query("select * from Classrooms order by classroomId")
+    LiveData<List<Classroom>> getAllClassrooms();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertClassroom(Classroom... classrooms);

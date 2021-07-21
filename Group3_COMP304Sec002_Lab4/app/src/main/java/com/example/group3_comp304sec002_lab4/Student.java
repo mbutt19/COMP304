@@ -11,7 +11,7 @@ public class Student {
     private String firstName;
     private String lastName;
     private String department;
-    private int professorId;
+    private final int professorId;
     private int classroom;
 
     // Constructor with all attributes

@@ -13,6 +13,8 @@ import java.util.List;
 public interface StudentDao {
 
     //Monitoring Query Result Changes with Live Data
+    @Query("select * from Student order by studentId")
+    LiveData<List<Student>> getAllStudents();
     @Query("select * from Student where studentId = :studentId")
     LiveData<List<Student>> getSelectStudent(int studentId);
     @Query("select * from Student where classroom = :classroomId")
@@ -22,5 +24,5 @@ public interface StudentDao {
     void insertStudent(Student... students);
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
-    void updateStudent(Student... students);
+    void updateStudent(Student student);
 }

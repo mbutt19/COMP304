@@ -14,11 +14,11 @@ public interface ProfessorDao {
 
     //Monitoring Query Result Changes with Live Data
     @Query("select * from Professor where professorId = :professorId")
-    LiveData<List<Professor>> getSelectProfessor(int professorId);
+    LiveData<List<Professor>> findProfessor(int professorId);
+    @Query("select * from Professor order by professorId")
+    LiveData<List<Professor>> getProfessors();
+
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertProfessor(Student... students);
-
-    @Update(onConflict = OnConflictStrategy.REPLACE)
-    void updateProfessor(Student... students);
+    void insertProfessor(Professor professor);
 }
