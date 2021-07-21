@@ -32,9 +32,9 @@ public class StudentActivity extends AppCompatActivity {
             @Override
             public void onChanged(Integer integer) {
                 if (integer == 1) {
-                    Toast.makeText(StudentActivity.this, "Student successfully saved", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(StudentActivity.this, "Students successfully seeded", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(StudentActivity.this, "Error saving student", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(StudentActivity.this, "Error seeding students", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -44,32 +44,32 @@ public class StudentActivity extends AppCompatActivity {
         viewBtn.setOnClickListener(new View.OnClickListener() {
             //Implement the event handler method
             public void onClick(View v) {
-                EditText studentIn = findViewById(R.id.studentInput);
-                String idNum = studentIn.getText().toString();
-                // Query call for matching student id
-                // raw = studentVM.getSelectStudent(Integer.parseInt(idNum)).getValue();
-                //for (Student stu: raw){
-                    //results = "ID #: " + stu.getStudentId() +"\nFirst Name: "+ stu.getFirstName() +
-                      //      "\nLast Name: " + stu.getLastName() + "Department: " + stu.getDepartment() +
-                        //    "\nClassroom: " + stu.getClassroom() + "\nProfessor Id: "+ stu.getProfessorId();
-               // }
-                //stuTv.setText(results);
-                studentVM.getSelectStudent(Integer.parseInt(idNum)).observe(StudentActivity.this,
-                        new Observer<List<Student>>() {
-                    @Override
-                    public void onChanged(@Nullable List<Student> student) {
-                        if(!student.isEmpty()){
-                            Student stu = student.remove(0);
-                            results ="ID#: " + stu.getStudentId()+"\nFirst Name: "+ stu.getFirstName() +
-                                    "\nLast Name: " + stu.getLastName() + "\nDepartment: " + stu.getDepartment() +
-                                    "\nClassroom: " + stu.getClassroom() + "\nProfessor Id: "+ stu.getProfessorId();
-                            stuTv.setText(results);
-                        }
-                        else{
-                            Toast.makeText(StudentActivity.this, "NOT FOUND - Invalid ID#", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
+                try {
+                    EditText studentIn = findViewById(R.id.studentInput);
+                    int idNum = Integer.parseInt(studentIn.getText().toString());
+                    // Query call for matching student id
+                    studentVM.getSelectStudent(idNum).observe(StudentActivity.this,
+                            new Observer<List<Student>>() {
+                                @Override
+                                public void onChanged(@Nullable List<Student> student) {
+                                    if (!student.isEmpty()) {
+                                        Student stu = (Student) student.remove(0);
+                                        results = "ID#: " + stu.getStudentId() + "\nFirst Name: " + stu.getFirstName() +
+                                                "\nLast Name: " + stu.getLastName() + "\nDepartment: " + stu.getDepartment() +
+                                                "\nClassroom: " + stu.getClassroom() + "\nProfessor Id: " + stu.getProfessorId();
+                                        stuTv.setText(results);
+                                    } else {
+                                        stuTv.setText("NOT FOUND - Invalid ID#");
+                                    }
+                                }
+                            });
+                }
+                catch (NumberFormatException nfe){
+                    Toast.makeText(StudentActivity.this, "Enter Valid ID#", Toast.LENGTH_LONG).show();
+                }
+                catch (Exception e){
+                    Toast.makeText(StudentActivity.this, e.toString(), Toast.LENGTH_LONG).show();
+                }
             }
         });
         // Update Button Implementation

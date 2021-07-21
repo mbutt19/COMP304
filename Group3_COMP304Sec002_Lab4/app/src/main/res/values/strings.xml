@@ -17,7 +17,7 @@
     <string name="hr">Homeroom</string>
     <string name="prof">Professors</string>
     <string name="display">Display</string>
-    <string name="profHint">Enter 1 professor name per line</string>
+    <string name="profHint">Enter Professor Name</string>
     <string name="classMsg">Enter Classroom Data</string>
     <string name="pid">Professor ID #</string>
     <string name="cid">Classroom ID #</string>

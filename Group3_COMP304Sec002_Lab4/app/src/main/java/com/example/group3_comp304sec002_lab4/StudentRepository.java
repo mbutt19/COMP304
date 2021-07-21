@@ -20,8 +20,8 @@ public class StudentRepository {
     }
 
     LiveData<List<Student>> getAllStudents() { return studentList; }
-    LiveData<List<Student>> getSelectStudent(int studentId) { return studentList; }
-    LiveData<List<Student>> getAllStudentsInClass(int classroomId) { return studentList; }
+    LiveData<List<Student>> getSelectStudent(int studentId) { return studentDao.getSelectStudent(studentId); }
+    LiveData<List<Student>> getAllStudentsInClass(int classroomId) { return studentDao.getAllStudentsInClass(classroomId); }
     void insertStudent(Student... students) { insertAsync(students); }
     void updateStudent(Student student) { updateAsync(student);}
     // returns insert results as LiveData object

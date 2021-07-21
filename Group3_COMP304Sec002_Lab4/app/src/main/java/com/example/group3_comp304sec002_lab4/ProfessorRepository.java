@@ -19,8 +19,8 @@ public class ProfessorRepository {
         professorList = professorDao.getProfessors();
     }
 
-    LiveData<List<Professor>> findProfessor(int professorId) { return professorList; }
-    LiveData<List<Professor>> getProfessors(int professorId) { return professorList; }
+    LiveData<List<Professor>> findProfessor(int professorId) { return professorDao.findProfessor(professorId); }
+    LiveData<List<Professor>> getProfessors() { return professorList; }
     void insertProfessor(Professor professor) { insertAsync(professor); }
     // returns insert results as LiveData object
     public LiveData<Integer> getInsertResult() {

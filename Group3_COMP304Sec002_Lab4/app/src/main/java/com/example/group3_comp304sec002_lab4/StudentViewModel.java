@@ -22,8 +22,8 @@ public class StudentViewModel extends AndroidViewModel {
     }
 
     LiveData<List<Student>> getAllStudents() { return allStudents; }
-    LiveData<List<Student>> getSelectStudent(int studentId) { return allStudents; }
-    LiveData<List<Student>> getAllStudentsInClass(int classroomId) { return allStudents; }
+    LiveData<List<Student>> getSelectStudent(int studentId) { return studentRepository.getSelectStudent(studentId); }
+    LiveData<List<Student>> getAllStudentsInClass(int classroomId) { return studentRepository.getAllStudentsInClass(classroomId); }
     void insertStudent(Student... students) { studentRepository.insertStudent(students); }
     void updateStudent(Student student) { studentRepository.updateStudent(student);}
     // returns insert results as LiveData object
@@ -37,5 +37,6 @@ public class StudentViewModel extends AndroidViewModel {
         Student s2 = new Student(777,"Charlie","Brown","Philosophy",
                 003, 2002);
         studentRepository.insertStudent(s1);
+        studentRepository.insertStudent(s2);
     }
 }
