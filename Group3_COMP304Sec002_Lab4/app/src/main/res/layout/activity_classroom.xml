@@ -62,46 +62,49 @@
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/classCid"
+        style="@style/input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
+        android:hint="@string/cid"
         android:inputType="number"
-        style="@style/input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView8"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextNumber2"
+        android:id="@+id/classPid"
+        style="@style/input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
+        android:hint="@string/pid"
         android:inputType="number"
-        style="@style/input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/classCid" />
 
     <EditText
-        android:id="@+id/editTextNumber3"
+        android:id="@+id/floor"
+        style="@style/input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
+        android:hint="@string/floor"
         android:inputType="number"
-        style="@style/input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber2" />
+        app:layout_constraintTop_toBottomOf="@+id/classPid" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -114,7 +117,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textView11"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber3">
+        app:layout_constraintTop_toBottomOf="@+id/floor">
 
         <RadioButton
             android:id="@+id/tRdo"
@@ -131,44 +134,67 @@
     </RadioGroup>
 
     <EditText
-        android:id="@+id/editTextTextMultiLine"
+        android:id="@+id/classSid"
+        style="@style/input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
         android:gravity="start|top"
-        android:inputType="textMultiLine"
-        style="@style/input"
+        android:hint="@string/stuID"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView12"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <Button
         android:id="@+id/loadClassBtn"
+        style="@style/buttons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="32dp"
         android:layout_marginBottom="32dp"
         android:text="@string/display"
-        style="@style/buttons"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+        app:layout_constraintTop_toBottomOf="@+id/wall" />
 
     <Button
         android:id="@+id/updateClassBtn"
+        style="@style/buttons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="32dp"
         android:text="@string/enter"
-        style="@style/buttons"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+        app:layout_constraintTop_toBottomOf="@+id/wall" />
+
+    <EditText
+        android:id="@+id/wall"
+        style="@style/input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:ems="10"
+        android:hint="@string/wall"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/classSid" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:text="@string/wall"
+        style="@style/labels"
+        app:layout_constraintEnd_toStartOf="@+id/wall"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/classSid" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

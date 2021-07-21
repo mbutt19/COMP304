@@ -6,7 +6,7 @@
     <string name="user">User ID</string>
     <string name="pass">Password</string>
     <string name="classrooms">Classrooms</string>
-    <string name="students">Students</string>
+    <string name="students">Student ID #</string>
     <string name="stuID">Student ID #</string>
     <string name="view">View</string>
     <string name="update">Update</string>
@@ -18,7 +18,7 @@
     <string name="prof">Professor</string>
     <string name="display">Display</string>
     <string name="profHint">Enter Professor ID #</string>
-    <string name="classMsg">Enter Classroom Data</string>
+    <string name="classMsg">Classroom Data</string>
     <string name="pid">Professor ID #</string>
     <string name="cid">Classroom ID #</string>
     <string name="floor">Floor</string>
@@ -26,4 +26,5 @@
     <string name="t">True</string>
     <string name="f">False</string>
     <string name="enter">Enter</string>
+    <string name="wall">Wall Color</string>
 </resources>

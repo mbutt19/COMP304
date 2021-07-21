@@ -15,11 +15,10 @@ import java.util.List;
 
 public class UpdateInfoActivity extends AppCompatActivity {
     private StudentViewModel studentVM;
-    private String results;
     private Button displayBtn;
     private Button updateBtn;
     private int sidInput;
-    private Student student;
+    private Student stu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +44,8 @@ public class UpdateInfoActivity extends AppCompatActivity {
                                 @Override
                                 public void onChanged(@Nullable List<Student> student) {
                                     if (!student.isEmpty()) {
-                                        Student stu = student.remove(0);
+                                        stu = student.remove(0);
                                         Toast.makeText(UpdateInfoActivity.this, stu.toString(), Toast.LENGTH_LONG);
-                                        sid.setText(Integer.toString(stu.getStudentId()));
                                         pid.setText(Integer.toString(stu.getProfessorId()));
                                         cid.setText(Integer.toString(stu.getClassroom()));
                                         fn.setText(stu.getFirstName());
@@ -71,33 +69,31 @@ public class UpdateInfoActivity extends AppCompatActivity {
                 if(sid.getText().toString().isEmpty()){
                     Toast.makeText(UpdateInfoActivity.this, "Enter Student ID# To Continue", Toast.LENGTH_SHORT);
                 }
-                else if(pid.getText().toString() == ""){
+                if(pid.getText().toString() == ""){
                     Toast.makeText(UpdateInfoActivity.this, "Enter Professor ID# To Continue", Toast.LENGTH_SHORT);
                 }
-                else if(cid.getText().toString() == ""){
+                if(cid.getText().toString() == ""){
                     Toast.makeText(UpdateInfoActivity.this, "Enter Classroom ID# To Continue", Toast.LENGTH_SHORT);
                 }
-                else if(fn.getText().toString() == ""){
+                if(fn.getText().toString() == ""){
                     Toast.makeText(UpdateInfoActivity.this, "Enter First Name To Continue", Toast.LENGTH_SHORT);
                 }
-                else if(ln.getText().toString() == ""){
+                if(ln.getText().toString() == ""){
                     Toast.makeText(UpdateInfoActivity.this, "Enter Last NameTo Continue", Toast.LENGTH_SHORT);
                 }
-                else if(dept.getText().toString() == ""){
+                if(dept.getText().toString() == ""){
                     Toast.makeText(UpdateInfoActivity.this, "Enter Department To Continue", Toast.LENGTH_SHORT);
                 }
-                else{
-                    try {
-                        sidInput = Integer.parseInt(sid.getText().toString());
-                        student = new Student((sidInput), fn.getText().toString(), ln.getText().toString(),
-                                dept.getText().toString(), Integer.parseInt(cid.getText().toString()),
-                                Integer.parseInt(pid.getText().toString()));
-                        studentVM.insertStudent(student);
-                        Toast.makeText(UpdateInfoActivity.this, "Database Updated", Toast.LENGTH_LONG);
-                    }
-                    catch (NumberFormatException nfe){
-                        Toast.makeText(UpdateInfoActivity.this, "Complete All Fields", Toast.LENGTH_LONG);
-                    }
+                try {
+                    sidInput = Integer.parseInt(sid.getText().toString());
+                    stu = new Student((sidInput), fn.getText().toString(), ln.getText().toString(),
+                            dept.getText().toString(), Integer.parseInt(cid.getText().toString()),
+                            Integer.parseInt(pid.getText().toString()));
+                    studentVM.insertStudent(stu);
+                    Toast.makeText(UpdateInfoActivity.this, "Database Updated", Toast.LENGTH_LONG);
+                }
+                catch (NumberFormatException nfe){
+                    Toast.makeText(UpdateInfoActivity.this, "Complete All Fields", Toast.LENGTH_LONG);
                 }
             }
         });

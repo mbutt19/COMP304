@@ -33,7 +33,7 @@ public class ClassroomViewModel extends AndroidViewModel {
     public void seedData(){
         Classroom c1 = new Classroom(001,2001,2,true,
                 "White", 777);
-        Classroom c2 = new Classroom(001,2002,1,false,
+        Classroom c2 = new Classroom(002,2002,1,false,
                 "Yellow", 666);
         classroomRepo.insertClassroom(c1);
         classroomRepo.insertClassroom(c2);
