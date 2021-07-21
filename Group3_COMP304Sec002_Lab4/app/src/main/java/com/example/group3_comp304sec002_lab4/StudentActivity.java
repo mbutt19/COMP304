@@ -19,7 +19,6 @@ import java.util.List;
 public class StudentActivity extends AppCompatActivity {
     private StudentViewModel studentVM;
     private String results;
-    private List<Student> raw;
     private TextView stuTv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +52,7 @@ public class StudentActivity extends AppCompatActivity {
                                 @Override
                                 public void onChanged(@Nullable List<Student> student) {
                                     if (!student.isEmpty()) {
-                                        Student stu = (Student) student.remove(0);
+                                        Student stu = student.remove(0);
                                         results = "ID#: " + stu.getStudentId() + "\nFirst Name: " + stu.getFirstName() +
                                                 "\nLast Name: " + stu.getLastName() + "\nDepartment: " + stu.getDepartment() +
                                                 "\nClassroom: " + stu.getClassroom() + "\nProfessor Id: " + stu.getProfessorId();

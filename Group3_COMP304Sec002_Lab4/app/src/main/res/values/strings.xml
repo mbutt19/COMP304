@@ -14,8 +14,8 @@
     <string name="fn">First Name</string>
     <string name="ln">Last Name</string>
     <string name="dept">Department</string>
-    <string name="hr">Homeroom</string>
-    <string name="prof">Professors</string>
+    <string name="hr">Classroom</string>
+    <string name="prof">Professor</string>
     <string name="display">Display</string>
     <string name="profHint">Enter Professor Name</string>
     <string name="classMsg">Enter Classroom Data</string>
