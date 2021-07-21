@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
@@ -69,21 +68,36 @@ public class UpdateInfoActivity extends AppCompatActivity {
         updateBtn = findViewById(R.id.studentUpdateBtn);
         updateBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                try{
-                    if(sid.getText().toString().isEmpty() || pid.getText().toString().isEmpty() ||
-                    cid.getText().toString().isEmpty() || fn.getText().toString().isEmpty() ||
-                    ln.getText().toString().isEmpty() || dept.getText().toString().isEmpty()){
+                if(sid.getText().toString().isEmpty()){
+                    Toast.makeText(UpdateInfoActivity.this, "Enter Student ID# To Continue", Toast.LENGTH_SHORT);
+                }
+                else if(pid.getText().toString() == ""){
+                    Toast.makeText(UpdateInfoActivity.this, "Enter Professor ID# To Continue", Toast.LENGTH_SHORT);
+                }
+                else if(cid.getText().toString() == ""){
+                    Toast.makeText(UpdateInfoActivity.this, "Enter Classroom ID# To Continue", Toast.LENGTH_SHORT);
+                }
+                else if(fn.getText().toString() == ""){
+                    Toast.makeText(UpdateInfoActivity.this, "Enter First Name To Continue", Toast.LENGTH_SHORT);
+                }
+                else if(ln.getText().toString() == ""){
+                    Toast.makeText(UpdateInfoActivity.this, "Enter Last NameTo Continue", Toast.LENGTH_SHORT);
+                }
+                else if(dept.getText().toString() == ""){
+                    Toast.makeText(UpdateInfoActivity.this, "Enter Department To Continue", Toast.LENGTH_SHORT);
+                }
+                else{
+                    try {
+                        sidInput = Integer.parseInt(sid.getText().toString());
+                        student = new Student((sidInput), fn.getText().toString(), ln.getText().toString(),
+                                dept.getText().toString(), Integer.parseInt(cid.getText().toString()),
+                                Integer.parseInt(pid.getText().toString()));
+                        studentVM.insertStudent(student);
+                        Toast.makeText(UpdateInfoActivity.this, "Database Updated", Toast.LENGTH_LONG);
+                    }
+                    catch (NumberFormatException nfe){
                         Toast.makeText(UpdateInfoActivity.this, "Complete All Fields", Toast.LENGTH_LONG);
                     }
-                    else{
-                        student = new Student(Integer.parseInt(sid.getText().toString()),
-                                fn.getText().toString(), ln.getText().toString(), dept.getText().toString(),
-                                Integer.parseInt(cid.getText().toString()), Integer.parseInt(pid.getText().toString()));
-                        studentVM.insertStudent(student);
-                    }
-                }
-                catch (Exception e){
-                    Toast.makeText(UpdateInfoActivity.this, "Student ID# Not Found", Toast.LENGTH_LONG);
                 }
             }
         });
