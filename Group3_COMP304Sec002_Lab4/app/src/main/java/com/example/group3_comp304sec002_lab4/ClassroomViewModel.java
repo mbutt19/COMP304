@@ -11,7 +11,6 @@ public class ClassroomViewModel extends AndroidViewModel {
     // sending the results to the Activity
     ClassroomRepository classroomRepo;
     LiveData<Integer> insertResult;
-    LiveData<List<Student>> allStudents;
 
     public ClassroomViewModel(@NonNull Application application) {
         super(application);

@@ -27,16 +27,6 @@ public class StudentActivity extends AppCompatActivity {
 
         stuTv = findViewById(R.id.studentTv);
         studentVM = ViewModelProviders.of(this).get(StudentViewModel.class);
-        studentVM.getInsertResult().observe(this, new Observer<Integer>() {
-            @Override
-            public void onChanged(Integer integer) {
-                if (integer == 1) {
-                    Toast.makeText(StudentActivity.this, "Students successfully seeded", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(StudentActivity.this, "Error seeding students", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
 
         // View Student Button Implementation
         Button viewBtn = findViewById(R.id.viewStudentBtn);
