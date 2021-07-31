@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">COMP304Sec_002_Lab5</string>
+    <string name="title_activity_maps">Map</string>
+
+    <!-- Main Heading for the Main Activity -->
+    <string name="main_title">Restaurants By Centennial</string>
+    <!-- List of Toronto Cuisines in Toronto -->
+    <string-array name="cuisines_toronto">
+        <item>Italian</item>
+        <item>Greek</item>
+        <item>Chinese</item>
+        <item>Indian</item>
+    </string-array>
+    <!-- Title for each map activity -->
+    <string name="title_italian">Italian Restaurants</string>
+    <string name="title_greek">Greek Restaurants</string>
+    <string name="title_chinese">Chinese Restaurants</string>
+    <string name="title_indian">Indian Restaurants</string>
+    <!-- Maps -->
+    <string name="title_activity_greek_map">GrMap</string>
+    <string name="title_activity_chinese_map">ChMap</string>
+    <string name="title_activity_indian_map">InMap</string>
+    <string name="title_activity_italian_map">ItMap</string>
+    <!-- Names of Italian Cuisines in Toronto -->
+    <string-array name="italian_cuisines">
+        <item>Sahebi Italian Food</item>
+        <item>Rosas Pasta Express</item>
+        <item>Scaddabush</item>
+    </string-array>
+    <!-- Names of Greek Cuisines in Toronto -->
+    <string-array name="greek_cuisines">
+        <item>Osmows</item>
+        <item>Jimmy The Greek</item>
+        <item>Mr Greek</item>
+    </string-array>
+    <!-- Names of Chinese Cuisines in Toronto -->
+    <string-array name="chinese_cuisines">
+        <item>Asian Legend</item>
+        <item>Chopstick House</item>
+        <item>Tim Choi</item>
+    </string-array>
+    <!-- Names of Indian Cuisines in Toronto -->
+    <string-array name="indian_cuisines">
+        <item>Samosa King</item>
+        <item>Taj Mahal</item>
+        <item>Vindaloo Cuisine</item>
+    </string-array>
+    <string name="all">VIEW ALL</string>
+    <string name="mapSwitch">SWITCH MAP</string>
+    <string name="intentName">Selected</string>
+</resources>
